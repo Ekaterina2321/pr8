@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кнопки с событиями</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <nav>
+        <a href="index.html" class="active-button">1 задание</a>
+        <a href="twozadanie.html">2 задание</a>
+        <a href="threezadanie.html">3 задание</a>
+    </nav>
+
+    <div class="buttons">
+        <button id="clickButton" class="button">Нажмите</button>
+        <button id="hoverButton" class="button">Наведите</button>
+        <button id="leaveButton" class="button">Уберите мышь</button>
+    </div>
+
+    <script>
+        document.getElementById('clickButton').addEventListener('click', function () {
+            this.classList.add('click-effect');
+            setTimeout(() => {
+                this.classList.remove('click-effect');
+            }, 500);
+        });
+        document.getElementById('hoverButton').addEventListener('mouseenter', function () {
+            this.classList.add('hover-effect');
+        });
+        document.getElementById('hoverButton').addEventListener('mouseleave', function () {
+            this.classList.remove('hover-effect');
+        });
+
+        document.getElementById('leaveButton').addEventListener('mouseleave', function () {
+            this.classList.add('leave-effect');
+            setTimeout(() => {
+                this.classList.remove('leave-effect');
+            }, 500);
+        });
+    </script>
+</body>
+
+</html>

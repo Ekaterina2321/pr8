@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кнопки с событиями</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <nav>
+        <a href="index.html">1 задание</a>
+        <a href="twozadanie.html">2 задание</a>
+        <a href="threezadanie.html" class="active-button">3 задание</a>
+    </nav>
+
+    <div id="movableBlock" class="square-block"></div>
+
+    <script>
+        let block = document.getElementById('movableBlock');
+        let position = {
+            x: 50, 
+            y: 50 
+        };
+
+        function moveBlock() {
+            block.style.left = position.x + 'vw'; 
+            block.style.top = position.y + 'vh';
+        }
+
+        window.addEventListener('keydown', function (event) {
+            switch (event.key.toLowerCase()) {
+                case 'w': 
+                    position.y -= 0.1;
+                    break;
+                case 's':
+                    position.y += 0.1;
+                    break;
+                case 'a':
+                    position.x -= 0.1;
+                    break;
+                case 'd':
+                    position.x += 0.1;
+                    break;
+            }
+            moveBlock(); //возвращает потом на место
+        });
+    </script>
+
+
+</body>
+
+</html>
